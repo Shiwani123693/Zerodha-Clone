@@ -1,0 +1,14 @@
+import React from "react";
+import {render,screen} from "@testing-library/react";
+import "@testing-library/jest-dom";
+import Hero from "../landing_page/home/Hero";
+
+describe('Hero Component', () => { 
+    test("render image",()=>{
+        render(<Hero/>) ;
+
+        const HeroImage=screen.getByAltText("Hero Image");
+        expect(HeroImage).toBeInTheDocument();
+        expect(HeroImage).toHaveAttribute('src','media/homeHero.png');
+    });
+ });
